@@ -4,6 +4,7 @@ var currentPrice = document.querySelector("#current_price");
 var btnCalculate = document.querySelector("#btn_calculate");
 var outboxContainer = document.querySelector("#outbox_container");
 var body = document.querySelector("body");
+var para = document.querySelector("p");
 
 
 
@@ -72,13 +73,16 @@ function changeTheme(status){
   switch (status) {
     case "PROFIT":
       body.style.backgroundColor = "green";
+      para.style.color = "white";
       break;
     case "LOSS":
       body.style.backgroundColor = "red";
+      para.style.color = "#5b54fa";
       break;
 
     case "NOGAIN":
       body.style.backgroundColor = "#FFF49A";
+      para.style.color = "#5b54fa";
       break;
     default:
       break;
