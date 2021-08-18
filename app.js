@@ -4,8 +4,7 @@ var currentPrice = document.querySelector("#current_price");
 var btnCalculate = document.querySelector("#btn_calculate");
 var outboxContainer = document.querySelector("#outbox_container");
 var body = document.querySelector("body");
-var para = document.querySelector("p");
-
+var para = document.querySelector("p") ;
 
 
 btnCalculate.addEventListener("click", clickHandler);
@@ -15,8 +14,11 @@ function clickHandler(){
   if(initialPrice.value === "" || stockQuantity.value === "" || currentPrice.value === ""){
     console.log(initialPrice.value,stockQuantity.value,currentPrice.value)
   alert("Please Enter all the information required to Calculate the Profit or Loss")
-  }else{
-  calculateProfitOrLoss(Number(initialPrice.value),Number(stockQuantity.value),Number(currentPrice.value))
+  }
+  else if (Number(stockQuantity.value) === 0) {
+    alert("Stock Quantity can't be zero");
+  }else {
+   calculateProfitOrLoss(Number(initialPrice.value),Number(stockQuantity.value),Number(currentPrice.value));
   }
 }
 
